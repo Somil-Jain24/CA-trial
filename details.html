@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StarNest - Details</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Button styles for the details page CTA */
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      background: linear-gradient(135deg,#6a5cff,#a86bff);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(106,92,255,0.16);
+      transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(106,92,255,0.22); }
+    .btn:active { transform: translateY(0); }
+    .center-content .btn { display: block; margin: 18px auto 0; }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="twinkling"></div>
+
+  <section class="details center-content">
+    <div class="content reveal">
+      <h1>✨ StarNest Cosmic Journeys</h1>
+      <p>At <span class="highlight">StarNest</span>, we bring the future of travel to your fingertips. From luxury orbital stays to Mars exploration packages, we make space feel like home.</p>
+      <ul>
+        <li>🚀 Safe & advanced spacecraft technology</li>
+        <li>🤝 Guided tours by expert astronauts</li>
+        <li>🌱 Sustainable space habitats</li>
+        <li>🎥 Live-stream your journey to Earth</li>
+      </ul>
+      <button class="btn" onclick="location.href='index.html'" aria-label="Back to Home">⬅ Back to Home</button>
+    </div>
+  </section>
+
+  <script>
+    // Scroll reveal animation
+    const reveals = document.querySelectorAll('.reveal');
+
+    window.addEventListener('scroll', () => {
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveals[i].getBoundingClientRect().top;
+        const revealPoint = 150;
+
+        if (revealTop < windowHeight - revealPoint) {
+          reveals[i].classList.add('active');
+        } else {
+          reveals[i].classList.remove('active');
+        }
+      }
+    });
+  </script>
+</body>
+</html>

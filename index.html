@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StarNest - Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Button styles for the hero CTA */
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      background: linear-gradient(135deg,#6a5cff,#a86bff);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(106,92,255,0.18);
+      transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(106,92,255,0.22); }
+    .btn:active { transform: translateY(0); }
+    /* Ensure button is centered inside .center-content */
+    .center-content .btn { display: block; margin: 18px auto 0; }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="twinkling"></div>
+
+  <section class="hero center-content">
+    <div class="content reveal">
+      <h1>🚀 Welcome to <span class="highlight">StarNest</span></h1>
+      <p>Your gateway to cosmic adventures</p>
+      <button class="btn" onclick="location.href='details.html'" aria-label="Book Your Cosmic Journey">
+        Book Your Cosmic Journey
+      </button>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature reveal">
+      <h2>🌌 Interstellar Travel</h2>
+      <p>Experience safe and thrilling journeys beyond the stars.</p>
+    </div>
+    <div class="feature reveal">
+      <h2>🤖 AI Space Companions</h2>
+      <p>Never feel alone with your personalized AI buddy in space.</p>
+    </div>
+    <div class="feature reveal">
+      <h2>🏠 Space Habitats</h2>
+      <p>Live comfortably with eco-friendly, futuristic homes in orbit.</p>
+    </div>
+  </section>
+
+  <script>
+    // Scroll reveal animation
+    const reveals = document.querySelectorAll('.reveal');
+
+    window.addEventListener('scroll', () => {
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveals[i].getBoundingClientRect().top;
+        const revealPoint = 150;
+
+        if (revealTop < windowHeight - revealPoint) {
+          reveals[i].classList.add('active');
+        } else {
+          reveals[i].classList.remove('active');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
